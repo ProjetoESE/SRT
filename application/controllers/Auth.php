@@ -5,17 +5,24 @@
 	
 			public function login()
 				{
-					$dados['email'] = $this->input->post('email');
-					$dados['senha'] = $this->input->post('senha');
+					$data['email'] = $this->input->post('email');
+					$data['password'] = $this->input->post('password');
 
-					$this->load->model('usuarios');
+					$this->load->model('users');
 
-					$this->usuarios->loga($dados);
+					$this->users->login($data);
 				}
 
-			public function confirmaemail($tokem)
+			public function confirmEmail()
 				{
-					echo "cofirmação de email";
+					$this->load->model('users');
+
+					$data = array(
+						'email' => $this->input->get('email'),
+						'token' => $this->input->get('token')
+					);
+
+					$this->users->grantAccess($data);
 				}
 			
 		}

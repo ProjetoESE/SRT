@@ -4,7 +4,7 @@
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
-          <small>Copyright © Your Website 2018</small>
+          <small>Copyright <?=Date('Y')?> © Sistema</small>
         </div>
       </div>
     </footer>
@@ -35,10 +35,6 @@
     <script src="<?=base_url('assets/')?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
     <script src="<?=base_url('assets/')?>vendor/jquery-easing/jquery.easing.min.js"></script>
-    <!-- Page level plugin JavaScript-->
-    <script src="<?=base_url('assets/')?>vendor/chart.js/Chart.min.js"></script>
-    <script src="<?=base_url('assets/')?>vendor/datatables/dataTables.bootstrap4.js"></script>
-    <!-- Custom scripts for all pages-->
     <script src="<?=base_url('assets/')?>js/sb-admin.min.js"></script>
  
   </div>

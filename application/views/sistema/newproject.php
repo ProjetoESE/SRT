@@ -3,20 +3,20 @@
 
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-cog"></i> Novo projeto</div>
+          <i class="fa fa-cog"></i> New project</div>
           <div class="card-body">
             <div class="row">
 
               <div class="col-12">
-                <form action="salvaprojeto" method="post">
+                <form action="projectsave" method="post">
                   <div class="form-gorup">
-                    <label for="titulo">Título</label>
-                    <input name="titulo" placeholder="Título" type="text" class="form-control" id="titulo">
+                    <label for="title">Title</label>
+                    <input name="title" placeholder="Título" type="text" class="form-control" id="title">
                   </div>
 
                   <div class="form-gorup">
-                    <label for="titulo">Descrição</label>
-                    <textarea name="descricao" rows="3" placeholder="Título" type="text" class="form-control" id="titulo"></textarea>
+                    <label for="title">Descrição</label>
+                    <textarea name="description" rows="3" placeholder="Título" type="text" class="form-control" id="title"></textarea>
                   </div>
                   <button type="submit" class="btn mt-4 btn-success">
                     salvar

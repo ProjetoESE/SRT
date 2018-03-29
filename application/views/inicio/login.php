@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
  
 <head>
   <meta charset="utf-8">
@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>SB Admin - Start Bootstrap Template</title>
+  <title>Login</title>
   <!-- Bootstrap core CSS-->
   <link href="<?=base_url('assets/')?>vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -18,30 +18,37 @@
 
 <body class="bg-dark">
   <div class="container">
+      <?php if ($this->session->flashdata('msg')): ?>
+        <div class="alert alert-<?=$this->session->flashdata('msg')['type'];?> my-4">
+          <p class="text-center p-0 m-0">
+            <?=$this->session->flashdata('msg')['text'];?>
+          </p>
+        </div>
+      <?php endif ?>
     <div class="card card-login mx-auto mt-5">
-      <div class="card-header">Login</div>
+      <div class="card-header text-center">Login</div>
       <div class="card-body">
-        <form method="post" name="form-login" action="auth/login">
+        <form method="post" name="form-login" action="<?=base_url('index.php')?>/auth/login">
           <div class="form-group">
             <label for="exampleInputEmail1">Email</label>
             
-            <input class="form-control" name="email" type="email" aria-describedby="emailHelp" placeholder="Digite seu Email">
+            <input required="" class="form-control" name="email" type="email" aria-describedby="emailHelp" placeholder="Enter your email">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Senha</label>
-            <input name="senha" class="form-control" type="password" placeholder="Senha">
+            <label for="exampleInputPassword1">Password</label>
+            <input required="" name="senha" class="form-control" type="password" placeholder="Password">
           </div>
           <div class="form-group">
             <div class="form-check">
               <label class="form-check-label">
-                <input name="lembrar-senha" class="form-check-input" type="checkbox"> lembrar-me</label>
+                <input name="remember-password" class="form-check-input" type="checkbox">remember password</label>
             </div>
           </div>
           <button type="submit" class="btn btn-primary btn-block" >Login</button>
         </form>
         <div class="text-center">
-          <a class="d-block small mt-3" href="sistema/cadastro">Registre-se</a>
-          <a class="d-block small" href="novasenha">Esqueci minha senha!</a>
+          <a class="d-block small mt-3" href="<?=base_url('index.php/sistema/register')?>">Register</a>
+          <a class="d-block small" href="#">I forgot my password!</a>
         </div>
       </div>
     </div>
